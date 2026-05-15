@@ -77,7 +77,7 @@ public class MainFrame extends JFrame {
         //Add Button to Display enrolled courses for Selected Student
         JButton viewEnrolledBtn = new JButton("View Courses");
         JPanel buttonsPanel = new JPanel();
-        buttonsPanel.add(addBtn); buttonsPanel.add(deleteBtn); buttonsPanel.add(enrollBtn);
+        buttonsPanel.add(addBtn); buttonsPanel.add(deleteBtn); buttonsPanel.add(enrollBtn); buttonsPanel.add(viewEnrolledBtn);
         //Match Labels with the Text Fields
         form.add(new Label("Student Name: ")); form.add(nameField);
         form.add(new Label("Registration #: ")); form.add(regField);
@@ -198,7 +198,10 @@ public class MainFrame extends JFrame {
                 JOptionPane.showMessageDialog(panel, "Student is already enrolled in this Course.");
                 return;
             }
-            selectedStudent.enroll(pickedCourse);
+            //Update courses in students class (Backend), then save it again to data
+            int index = data.students.indexOf(selectedStudent);
+            data.students.get(index).enroll(pickedCourse);
+
             //Update the Total Courses cell in the Table (new value, row, column)
             model.setValueAt(selectedStudent.getCourseList().size(), selectedRow, 3);
             JOptionPane.showMessageDialog(panel, "Student Enrolled Successfully!");
@@ -210,9 +213,33 @@ public class MainFrame extends JFrame {
     viewEnrolledBtn.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e){
-            //Working on this
+        // Check a student is selected
+        int selectedRow = table.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(panel, "Please select a student first.");
+            return;
+        }
+
+        Student selectedStudent = data.students.get(selectedRow);
+
+        // Check if student is enrolled in anything
+        if (selectedStudent.getCourseList().isEmpty()) {
+            JOptionPane.showMessageDialog(panel, selectedStudent.getStname() + " is not enrolled in any courses yet.");
+            return;
+        }
+        
+        //Store all courses neatly in a string and display
+        String courseList = "Courses Enrolled By " + selectedStudent.getStname() + " : ";
+        for(int i = 0; i < selectedStudent.getCourseList().size(); i++)
+        {
+            Course c = selectedStudent.getCourseList().get(i);
+            courseList += (i + 1) + ". " + c.getCourseName() + " ( " + c.getCourseID() + " )\n";
+        }
+        //Show the display message
+        JOptionPane.showMessageDialog(panel, courseList, "Enrolled Courses", JOptionPane.INFORMATION_MESSAGE); //we need to write the INFORMATION_MESSAGE since this is how the method argument is
         }
     });
+
         //Add the form to the panel
         panel.add(form, BorderLayout.NORTH);
         panel.add(scrollPane, BorderLayout.CENTER);
@@ -283,6 +310,11 @@ public class MainFrame extends JFrame {
                     course.getCourseID(),
                     course.getCreditHours(),
                 });
+                //Make fields empty after saving
+                nameField.setText("");
+                IDField.setText("");
+                creditHrsField.setText("");
+
             }
         });
 
