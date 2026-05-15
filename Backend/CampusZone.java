@@ -5,7 +5,7 @@ import java.io.*;
 
 //class cAMPUS ZONE
 public class CampusZone implements Serializable{
-
+private static final long serialVersionUID = 1L;
     private int zoneID; //3 in AB3, 2 in AB2 
     private String zoneName; //like Academic Block. Faculty block etc 
     private ArrayList<Facility> facilities;

@@ -1,7 +1,7 @@
 package Backend;
 
 public class Cafeteria extends Facility{
-
+private static final long serialVersionUID = 1L;
       
     //data Members
     private int fooditems; //food items present today

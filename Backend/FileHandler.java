@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.*;
 
 public class FileHandler {
-
+private static final long serialVersionUID = 1L;
     //1) Write to File
     public void saveToFile(CampusData data, String filename)
     {

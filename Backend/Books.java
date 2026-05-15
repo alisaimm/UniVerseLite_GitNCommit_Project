@@ -2,7 +2,7 @@ package Backend;
 
 import java.io.*;
 public class Books implements Serializable{
-
+private static final long serialVersionUID = 1L;
     //data members
     private String bookname;
     private String authorname;

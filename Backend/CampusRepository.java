@@ -4,6 +4,7 @@ import java.util.*;
 import java.io.*;
 //class Campus Repository 
 public class CampusRepository<T> implements Serializable {
+    private static final long serialVersionUID = 1L;
     private ArrayList<T> items; 
     
     public CampusRepository() {

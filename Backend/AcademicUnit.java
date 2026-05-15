@@ -2,7 +2,7 @@ package Backend;
 import java.util.*;
 //Academic Unit
 public abstract class AcademicUnit extends CampusEntity{
-    
+    private static final long serialVersionUID = 1L;
     //Data Members
     protected ArrayList<Equipment> equipment;
     protected ArrayList<Student> students;

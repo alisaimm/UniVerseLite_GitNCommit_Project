@@ -4,7 +4,7 @@ import java.util.*;
 //Course Class
 
 public class Course implements Serializable {
-    
+    private static final long serialVersionUID = 1L;
     //attributes
     private String courseName;
     private String courseID;

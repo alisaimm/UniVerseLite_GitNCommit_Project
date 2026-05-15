@@ -1,7 +1,7 @@
 package Backend;
 
 public class SecurityService extends ServiceUnit implements  Notifiable{
-    
+    private static final long serialVersionUID = 1L;
     private String alertLevel;
     
     public SecurityService() { 

@@ -5,7 +5,7 @@ public class Classroom extends AcademicUnit{
     //data members
     private boolean isAvailable;
     private int totalcapacity;
-
+private static final long serialVersionUID = 1L;
     //Zero argument constructir
     public Classroom(){
         super();

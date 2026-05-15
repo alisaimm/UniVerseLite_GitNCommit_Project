@@ -3,7 +3,7 @@ package Backend;
 import java.util.*;
 //Department class
 public class Department extends AcademicUnit implements Reportable{
-       
+       private static final long serialVersionUID = 1L;
     //data member
     private ArrayList<Course> courses;
     

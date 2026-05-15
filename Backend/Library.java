@@ -2,7 +2,7 @@ package Backend;
 import java.util.*;
 
 public class Library extends Facility implements Reportable{
-    
+    private static final long serialVersionUID = 1L;
     //data members 
     protected ArrayList <Books> b1;
       

@@ -1,7 +1,7 @@
 package Backend;
 
 public class Hostel extends Facility{
-      
+      private static final long serialVersionUID = 1L;
     //data Members
     private boolean[] isOccupied = new boolean[100];
       

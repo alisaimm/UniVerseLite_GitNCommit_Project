@@ -2,7 +2,7 @@ package Backend;
 
 //Facility
 public class Facility extends CampusEntity{
-
+private static final long serialVersionUID = 1L;
     //Data Members
     protected double maintenance_cost;
     protected double usage_frequency;

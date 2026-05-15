@@ -1,7 +1,7 @@
 package Backend;
 //class HealthCenter
 public class HealthCenter extends ServiceUnit implements Notifiable{
-
+private static final long serialVersionUID = 1L;
     private int doctorsAvailable;
     
     public HealthCenter() {

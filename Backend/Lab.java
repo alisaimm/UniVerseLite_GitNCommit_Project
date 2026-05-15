@@ -2,7 +2,7 @@ package Backend;
 
  //class Lab
 public class Lab extends AcademicUnit {
-    
+    private static final long serialVersionUID = 1L;
     //data members
     private boolean isfree;
     private int totalcapacity;

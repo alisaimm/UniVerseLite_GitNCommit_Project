@@ -3,7 +3,7 @@ package Backend;
 import java.io.Serializable;
 import java.util.*;
 public abstract class CampusEntity implements Serializable {
-
+private static final long serialVersionUID = 1L;
     //datamembers and common attributes
     protected String name;
     protected int entityID;
