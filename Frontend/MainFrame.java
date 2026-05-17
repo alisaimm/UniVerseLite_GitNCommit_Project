@@ -104,7 +104,6 @@ public class MainFrame extends JFrame {
         form.add(new Label("Registration #: ")); form.add(regField);
         form.add(new Label("Program: ")); form.add(programField);
         form.add(new Label("CGPA: ")); form.add(cgpaField);
-        //form.add(buttonsPanel);
         
 
     //2) Create table to display student information
@@ -699,12 +698,12 @@ public class MainFrame extends JFrame {
             outputArea.append(" CLASS SCHEDULE \n");
             // c1 schedule
             if (c1.getAssignedClassroom() != null) {
-                outputArea.append("Course     : " + c1.getCourseName()                  + "\n");
-                outputArea.append("Course ID  : " + c1.getCourseID()                    + "\n");
-                outputArea.append("Credit Hrs : " + c1.getCreditHours()                 + "\n");
+                outputArea.append("Course     : " + c1.getCourseName() + "\n");
+                outputArea.append("Course ID  : " + c1.getCourseID() + "\n");
+                outputArea.append("Credit Hrs : " + c1.getCreditHours()+ "\n");
                 outputArea.append("Classroom  : " + c1.getAssignedClassroom().getName() + "\n");
                 outputArea.append("Location   : " + c1.getAssignedClassroom().getLocation() + "\n");
-                outputArea.append("Timeslot   : " + c1.getTimeSlot()                    + "\n");
+                outputArea.append("Timeslot   : " + c1.getTimeSlot()+ "\n");
             } else {
                 outputArea.append(c1.getCourseName() + " : No classroom assigned.\n");
             }
@@ -713,9 +712,9 @@ public class MainFrame extends JFrame {
 
             // c2 schedule
             if (c2.getAssignedClassroom() != null) {
-                outputArea.append("Course     : " + c2.getCourseName()                  + "\n");
-                outputArea.append("Course ID  : " + c2.getCourseID()                    + "\n");
-                outputArea.append("Credit Hrs : " + c2.getCreditHours()                 + "\n");
+                outputArea.append("Course     : " + c2.getCourseName()+ "\n");
+                outputArea.append("Course ID  : " + c2.getCourseID()+ "\n");
+                outputArea.append("Credit Hrs : " + c2.getCreditHours()+ "\n");
                 outputArea.append("Classroom  : " + c2.getAssignedClassroom().getName() + "\n");
                 outputArea.append("Location   : " + c2.getAssignedClassroom().getLocation() + "\n");
                 outputArea.append("Timeslot   : " + c2.getTimeSlot()                    + "\n");
