@@ -1,11 +1,11 @@
 package Frontend;
 
+import Backend.*;
+import java.awt.*;
+import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
-import java.awt.event.*;
-import Backend.*;
 
 
 public class MainFrame extends JFrame {
@@ -370,8 +370,11 @@ public class MainFrame extends JFrame {
         }
     });
     
-        form.add(buttonPanel);
-        panel.add(form, BorderLayout.NORTH);
+        //form.add(buttonPanel);
+        JPanel topPanel = new JPanel(new BorderLayout());
+        topPanel.add(form, BorderLayout.NORTH);
+        topPanel.add(buttonPanel, BorderLayout.SOUTH);
+        panel.add(topPanel, BorderLayout.NORTH);
         panel.add(scrollPane, BorderLayout.CENTER);
 
         return panel;
