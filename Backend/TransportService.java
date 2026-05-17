@@ -1,58 +1,76 @@
 package Backend;
 
+import java.util.ArrayList;
+
+
+
 public class TransportService extends ServiceUnit implements Schedulable{ 
 
-    private String routeName;
-    private int totalBuses;
     
+    ArrayList<Bus> buses = new ArrayList<>();
+    private boolean isPeakHour; 
+
     public TransportService() { 
         super();
-        routeName = "Unknown";
-        totalBuses = 0; 
     }
     
     public TransportService(String name, String location, int entityID, String routeName, int totalBuses) {
         super(name, location, entityID);
-        setRouteName(routeName);
-        setTotalBuses(totalBuses);
     }
 
-    @Override
-    public String toString() {
-        return super.toString() + ("\nRoute Name : " +routeName+"\nTotal Buses : " +totalBuses);
+    public boolean getIsPeakHour() {
+        return isPeakHour;
     }
 
-    public String getRouteName() {
-        return routeName;
-    }
-
-    public final void setRouteName(String routeName) {
-        if(!routeName.isBlank()){
-            this.routeName = routeName;
-        }else{
-            this.routeName = "Unknown";
-        }
+    public void setIsPeakHour(boolean isPeakHour) {
+        this.isPeakHour = isPeakHour;
     }
 
     public int getTotalBuses() {
-        return totalBuses;
+        return buses.size();
     }
 
-    public final void setTotalBuses(int totalBuses) {
-        if(totalBuses > 0) {
-            this.totalBuses = totalBuses;
-        }else{
-            this.totalBuses = 0;
+    //Add and Retire Buses 
+    public void addBus(Bus b1) {
+        buses.add(b1);
+        System.out.println("Bus Added To Transport System");
+    } 
+    
+    public void retireBus(Bus b1) {
+        buses.remove(b1);
+        System.out.println("Bus Retired");
+    }
+
+    //Changing Routes Methods 
+    public void ChangeRouteToPeak(boolean isPeakHour) {
+        if(isPeakHour) {
+            for(int i=0; i<buses.size(); i++) {
+                buses.get(i).setCurrentRoute(buses.get(i).getPeakHourRoute());
+            }
         }
+        System.out.println("Routes Adjusted Per Peak Hour Requirements.");
     }
     
-    //Implement Method
-    @Override
-    public void generateSchedule()
-    {
-        System.out.println("Bus  |  Departure Time  | Bus Stop");
-        System.out.println("Bus 1 | 7:45 am  | Tarlai ");
-        System.out.println("Bus 2 | 8:00 am  | Chandni Chok");
-        System.out.println("Bus 3 | 9:15 am  | Fazal Town");
+    public void ChangeRouteToNormal(boolean isPeakHour) {
+        if(!isPeakHour) {
+            for(int i=0; i<buses.size(); i++) {
+                buses.get(i).setCurrentRoute(buses.get(i).getNormalRoute());
+            }
+        }
+        
+        System.out.println("Routes Adjusted Per Normal Time Requirements.");
     }
+
+    //Generating Schedule 
+    @Override
+    public void generateSchedule() {
+        System.out.println("Bus Schedule");
+        System.out.println(super.toString());
+        System.out.println();
+        for(int i=0; i<buses.size(); i++) {
+            System.out.println(buses.get(i).toString());
+            System.out.println();
+        }
+    }
+
 }//end of TransportService class

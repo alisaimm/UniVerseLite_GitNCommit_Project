@@ -2,7 +2,7 @@ package Backend;
 
 import java.util.*;
 //Service Unit
-public class ServiceUnit extends CampusEntity{
+abstract public class ServiceUnit extends CampusEntity{
 
     //Data Members
     protected ArrayList<Staff> staff_members;

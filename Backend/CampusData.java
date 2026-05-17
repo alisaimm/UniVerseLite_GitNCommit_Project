@@ -4,6 +4,7 @@ import java.util.*;
 
 //This class will serve as wrapper class for ALL classes(array lists) in this program for easy read and write (no modifier datatypes)
 public class CampusData implements Serializable{
+    
     private static final long serialVersionUID = 1L;
     //ArrayLists for campus entities
     ArrayList<Assignment> assignments = new ArrayList<>();
@@ -21,6 +22,7 @@ public class CampusData implements Serializable{
     ArrayList<TransportService> transportServices = new ArrayList<>();
     ArrayList<SecurityService> securityServices = new ArrayList<>();
     ArrayList<HealthCenter> healthCenters = new ArrayList<>();
+    ArrayList<Bus> bus = new ArrayList<>();
 
     //Constructors
     public CampusData() {

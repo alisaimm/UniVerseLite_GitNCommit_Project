@@ -192,7 +192,7 @@ public class MainFrame extends JFrame {
                 courseNames[i] = data.courses.get(i).getCourseName();
             }
             //JComboBox to select a course from available courses
-            JComboBox<String> courseDropDown = new JComboBox<String>(courseNames);
+            JComboBox<String> courseDropDown = new JComboBox<>(courseNames);
             //Put it in the PopUp message (result integer holds value of button picked by user (yes, no , X))
             int result = JOptionPane.showConfirmDialog(panel, courseDropDown, "Select a COURSE to ENROLL", JOptionPane.OK_CANCEL_OPTION);
 
