@@ -18,11 +18,11 @@ public class AppTheme {
     public static final Color TEXT_MID  = new Color(0x5A, 0x58, 0x72); // secondary
 
     //Font Styles ---
-    public static final Font FONT_TITLE = new Font("Georgia", Font.BOLD, 22);
-    public static final Font FONT_HEADING = new Font("Georgia", Font.BOLD, 15);
-    public static final Font FONT_BODY    = new Font("Segoe UI", Font.PLAIN, 13);
-    public static final Font FONT_LABEL   = new Font("Segoe UI", Font.PLAIN, 12);
-    public static final Font FONT_SMALL   = new Font("Segoe UI", Font.PLAIN, 11);
+    public static final Font FONT_TITLE = new Font("Georgia", Font.BOLD, 25);
+    public static final Font FONT_HEADING = new Font("Georgia", Font.BOLD, 23 );
+    public static final Font FONT_BODY    = new Font("Segoe UI", Font.PLAIN, 18);
+    public static final Font FONT_LABEL   = new Font("Segoe UI", Font.PLAIN, 15);
+    public static final Font FONT_SMALL   = new Font("Segoe UI", Font.PLAIN, 12);
     public static final Font FONT_BUTTON  = new Font("Segoe UI", Font.BOLD, 12);
     public static final Font FONT_TAB     = new Font("Segoe UI", Font.PLAIN, 12);
 
