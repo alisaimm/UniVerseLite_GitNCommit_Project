@@ -52,7 +52,7 @@ public class Course implements Serializable, Schedulable {
     
     public final void setCourseID(String courseID) {
         
-        if(courseId != null && !courseID.isBlank()){
+        if(courseID != null && !courseID.isBlank()){
             this.courseID = courseID;
         }else{
             this.courseID = null;
